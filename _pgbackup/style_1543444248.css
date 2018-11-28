@@ -8,9 +8,9 @@ body {
     background-image: linear-gradient(
     to bottom,
     #F3F3F3,
-    #F3F3F3 10%,
-    #ff1000 60%,
-    #0FD8D8 80%);
+    #F3F3F3 30%,
+    #ff1000 30%,
+    #0FD8D8 50%);
     background-repeat: no-repeat;
 }
 
@@ -159,7 +159,7 @@ button:hover {
     margin: 20px auto 20px;
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #01aeff;
+    background-color: #FF33CE;
     color: white;
     border: none;
     border-radius: 16px;
