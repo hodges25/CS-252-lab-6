@@ -9,7 +9,7 @@ body {
     to bottom,
     #F3F3F3,
     #F3F3F3 10%,
-    #0FD8D8 60%,
+    #ff1000 60%,
     #0FD8D8 80%);
     background-repeat: no-repeat;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .progress-bar {
-    background-color: #0FD8D8;
+    background-color: #FEAFEB;
     margin-bottom: 20px;
     border-radius: 16px;
 }
@@ -159,7 +159,7 @@ button:hover {
     margin: 20px auto 20px;
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #0FD8D8;
+    background-color: #01aeff;
     color: white;
     border: none;
     border-radius: 16px;
