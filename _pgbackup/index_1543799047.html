@@ -131,7 +131,7 @@
                 <div class="row1"> 
                     <div class="locations from-location1"> 
                         <label class="from-location2" for="from">From:</label>                         
-                        <input type="text" id="from-textbox" onkeyup="autoCompleteListener()" list="from-input"/>
+                        <input type="text" list="from-input"/>
                         <datalist id="from-input"></datalist>
                     </div>
                     <script type="text/javascript" charset="UTF-8">
@@ -141,20 +141,17 @@
                         var APPLICATION_ID = 'qsXGGn36lGCPigOuX4aG';
                         var APPLICATION_CODE = 'vYX90ZTsnEWtifSuSoy2yw';
                         var suggestion1,suggestion2,suggestion3,suggestion4,suggestion5;
-                         console.log("c");
-                         function autoCompleteListener() {
-                             var textBox = document.getElementById("from-textbox").value;
-                             console.log("b");
-							 if (query != textBox){
-    							if (textBox.length >= 1){
+                         
+                         function autoCompleteListener(textBox, event) {
+							 if (query != textBox.value){
+    							if (textBox.value.length >= 1){
      								/**
      								* A full list of available request parameters can be found in the Geocoder Autocompletion
       								* API documentation.
       								*
       								*/
-                                    console.log(textBox);
       								var params = '?' +
-       								'query=' +  encodeURIComponent(textBox) +   // The search text which is the basis of the query
+       								'query=' +  encodeURIComponent(textBox.value) +   // The search text which is the basis of the query
         							'&beginHighlight=' + encodeURIComponent('<mark>') + //  Mark the beginning of the match in a token. 
         							'&endHighlight=' + encodeURIComponent('</mark>') + //  Mark the end of the match in a token. 
        								'&maxresults=5' +  // The upper limit the for number of suggestions to be included 
@@ -165,7 +162,7 @@
       								ajaxRequest.send();
     							}
  							}
- 							query = textBox;
+ 							query = textBox.value;
 						}
                         
                         function onAutoCompleteSuccess() {
@@ -197,8 +194,7 @@
     					}
                         
                         function addSuggestionsToPanel(response){
-                            console.log(response.suggestions[0].label);
-   							var locations = response.suggestions,i;
+   							var locations = response.View[0].Result,i;
                             for (i = 0; i < locations.length; i++) {
                              	   if(i==0){
                                    		suggestion1 = locations[i].address.label;

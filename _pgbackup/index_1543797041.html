@@ -131,8 +131,7 @@
                 <div class="row1"> 
                     <div class="locations from-location1"> 
                         <label class="from-location2" for="from">From:</label>                         
-                        <input type="text" id="from-textbox" onkeyup="autoCompleteListener()" list="from-input"/>
-                        <datalist id="from-input"></datalist>
+                        <input class="to" type="text" name="firstname"> 
                     </div>
                     <script type="text/javascript" charset="UTF-8">
                      	 var AUTOCOMPLETION_URL = 'https://autocomplete.geocoder.api.here.com/6.2/suggest.json',
@@ -141,20 +140,17 @@
                         var APPLICATION_ID = 'qsXGGn36lGCPigOuX4aG';
                         var APPLICATION_CODE = 'vYX90ZTsnEWtifSuSoy2yw';
                         var suggestion1,suggestion2,suggestion3,suggestion4,suggestion5;
-                         console.log("c");
-                         function autoCompleteListener() {
-                             var textBox = document.getElementById("from-textbox").value;
-                             console.log("b");
-							 if (query != textBox){
-    							if (textBox.length >= 1){
+                         
+                         function autoCompleteListener(textBox, event) {
+							 if (query != textBox.value){
+    							if (textBox.value.length >= 1){
      								/**
      								* A full list of available request parameters can be found in the Geocoder Autocompletion
       								* API documentation.
       								*
       								*/
-                                    console.log(textBox);
       								var params = '?' +
-       								'query=' +  encodeURIComponent(textBox) +   // The search text which is the basis of the query
+       								'query=' +  encodeURIComponent(textBox.value) +   // The search text which is the basis of the query
         							'&beginHighlight=' + encodeURIComponent('<mark>') + //  Mark the beginning of the match in a token. 
         							'&endHighlight=' + encodeURIComponent('</mark>') + //  Mark the end of the match in a token. 
        								'&maxresults=5' +  // The upper limit the for number of suggestions to be included 
@@ -165,7 +161,7 @@
       								ajaxRequest.send();
     							}
  							}
- 							query = textBox;
+ 							query = textBox.value;
 						}
                         
                         function onAutoCompleteSuccess() {
@@ -187,42 +183,35 @@
 						ajaxRequest.addEventListener("error", onAutoCompleteFailed);
 						ajaxRequest.responseType = "json";
                         
-                        var suggestionsContainer = document.getElementById('');
+                        var suggestionsContainer = document.getElementById('row1');
                         function clearOldSuggestions(){
   						 	suggestion1 = null;
                             suggestion2 = null;
                             suggestion3 = null;
                             suggestion4 = null;
-                            suggestion5 = null;
     					}
-                        
+}
                         function addSuggestionsToPanel(response){
-                            console.log(response.suggestions[0].label);
-   							var locations = response.suggestions,i;
+   							var locations = response.View[0].Result,i;
                             for (i = 0; i < locations.length; i++) {
                              	   if(i==0){
                                    		suggestion1 = locations[i].address.label;
-                                       	document.getElementById("from-input").appendChild(suggestion1);
-                                       	console.log("here");
                                    }
                                 	else if(i==1){
                                         suggestion2 = locations[i].address.label;
-                                        document.getElementById("from-input").appendChild(suggestion2);
                                     }
                                 	else if(i==2){
                                    		suggestion3 = locations[i].address.label;
-                                        document.getElementById("from-input").appendChild(suggestion3);
                                    }
                                 	else if(i==3){
                                    		suggestion4 = locations[i].address.label;
-                                        document.getElementById("from-input").appendChild(suggestion4);
                                    }
                                 	else{
                                    		suggestion5 = locations[i].address.label;
-                                        document.getElementById("from-input").appendChild(suggestion5);
                                    }
                             }
                         }
+}
                         
                      </script>
                     <div class="locations to-location1"> 
