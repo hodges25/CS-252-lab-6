@@ -16,19 +16,21 @@
         <link href="icon.css" rel="stylesheet" type="text/css"> 
         <link href="form.css" rel="stylesheet" type="text/css"> 
     </head>     
-    <body> 
+    <body style="background-color: #015ebb !important;"> 
         <main class="content"> 
-            <div> 
+            <div style="background-color: #015ebb;"> 
                 <div class="title"> 
                     <h1 style="margin-top: 70px;
     text-align: center;
     font-weight: lighter;">The WeatherMan</h1>
-                    <div class="wrapper1">
+                    <div class="wrapper">
                         <search id="test" class="fwrapper"> 
                             <form>
+                                <br> 
+                                <br>
                                 <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;"> 
                                 <br> 
-                                <button id="button" class="button" type="submit" style="width: 100px;
+                                <button id="button" class="sub" type="submit" style="width: 100px;
     height: 50px;
     margin-top: 12px;
     font-size: 24px;"> 
@@ -129,6 +131,19 @@
                                 <li></li>                                 
                             </ul>                             
                         </div>                         
+                        <div class="text"> 
+                            <ul> 
+                                <li>Sunny</li>                                 
+                                <li>Partly Sunny</li>                                 
+                                <li>Partly Cloudy</li>                                 
+                                <li>Mostly Cloudy</li>                                 
+                                <li>Cloudy</li>                                 
+                                <li>Hazy</li>                                 
+                                <li>Thunderstorm</li>                                 
+                                <li>Rain</li>                                 
+                                <li>Sleet</li>                                 
+                            </ul>                             
+                        </div>                         
                     </div>                     
                 </div>                 
             </div>             
@@ -157,7 +172,7 @@ function fullDay(str) {
 
 $(function() {
   
-  var $wrapper = $('.wrapper1'),
+  var $wrapper = $('.wrapper'),
     $panel = $wrapper.find('.panel'),
     $city = $panel.find('#city'),
     $weather = $panel.find('.weather'),
@@ -302,7 +317,7 @@ $(function() {
         case '50':
           $icon.addClass('wi wi-fog');
           break;
-z      }
+      }
     });
 
     requestForecast.done(function(data) {
@@ -348,9 +363,6 @@ z      }
   }
 
   $form.submit(function(event) {
-    $("#city").css("visibility", "visible");
-    $("#temp").css("visibility", "visible");
-      
     var input = document.getElementById('search').value;
     var inputLength = input.length;
     if (inputLength) getWeather(input);
@@ -359,6 +371,8 @@ z      }
 
 });
             </script>             
+            <div class="panel"> 
+</div>             
         </main>         
     </body>     
 </html>
