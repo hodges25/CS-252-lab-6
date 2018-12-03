@@ -14,10 +14,10 @@
         <!-- Custom styles for this template -->         
         <link href="istyle.css" rel="stylesheet" type="text/css"> 
         <link href="icon.css" rel="stylesheet" type="text/css">
-    </head>     
+    </head>
     <body style="background-color: #33495f;"> 
         <main class="content"> 
-            <form class="form" style="background-color: #33495f;"> 
+            <form class="form" style="background-color: #33495f;">
                 <div class="title"> 
                     <h1 style="margin-top: 70px;">Weatherman</h1>
                     <div class="wrapper">
@@ -109,7 +109,7 @@
                             </ul>
                         </div>
                     </div>
-                    <p>Check the Weather on your flights locations!</p> 
+                    <p>Check the Weather on your flight locations!</p> 
                 </div>                 
                 <div class="progress"> 
                     <p>Step 1 of 3</p> 
@@ -119,35 +119,66 @@
                         </div>                         
                     </div>                     
                 </div>                 
-                <div class="categories"> 
-                    <button class="flights button">Flights</button>                     
-                    <button class="Hotels button">Hotels</button>                     
-                    <button class="Packages button">Weather</button>                     
+                <div class="categories">
+                    <button class="Flights button" onclick="routepg()">Route</button>
+                    <button class="Hotels button" onclick="hotelspg()">Hotels</button>                     
+                    <button class="Packages button" onclick="weatherpg()">Weather</button>
                 </div>                 
                 <div class="row1"> 
                     <div class="locations from-location1"> 
                         <label class="from-location2" for="from">From:</label>                         
-                        <input class="to" type="text" name="firstname"> 
+                        <input id="source" class="to" type="text" name="firstname" placeholder="Source"> 
                     </div>                     
                     <div class="locations to-location1"> 
                         <label class="to-location2" for="to">To:</label>                         
-                        <input class="to" type="text" name="firstname"> 
+                        <input id="destination" class="to" type="text" name="firstname" placeholder="Destination"> 
                     </div>                     
                 </div>                 
                 <div class="row2"> 
                     <div class="dates depart"> 
                         <label class="depart-date" for="depart">Depart:</label>                         
-                        <input class="departure-date" type="date"> 
+                        <input id="departDate" class="departure-date" type="date"> 
                     </div>                     
                     <div class="dates return"> 
                         <label class="returning-date" for="return">Return:</label>                         
-                        <input class="return-date" type="date"> 
+                        <input id="returnDate" class="return-date" type="date"> 
                     </div>                     
                 </div>                 
                 <div class="next-button"> 
-                    <button class="next" value="submit">Let's Fly!</button>                     
-                </div>                 
-            </form>             
-        </main>         
-    </body>     
+                    <button onclick="hotelspg()" class="next" value="submit" name="next">Let's Go!</button>
+                </div>
+            </form>
+        </main>
+        <script type="text/javascript">
+        	//function flightspg(){
+            //}
+            var source = document.getElementById("source");
+           	var destination = document.getElementById("destination").value;
+            var departDate = document.getElementById("departDate");
+            var returnDate = document.getElementById("returnDate");
+            /*
+            $(".next").click(function(){
+                console.log("hi");
+                current_fs = $(this).parent();
+				next_fs = $(this).parent().next();
+	
+                //activate next step on progressbar using the index of next_fs
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+	
+				//show the next fieldset
+				next_fs.show();
+			});
+            
+            $("#submit").click(function(){
+                $("#msform").on('submit',function(){
+                    $("#submitbl").trigger('click');
+				});
+            });
+            */
+            function hotelspg(){
+            	console.log(this.destination);
+               	//document.getElementbyId("demo").innerHTML = "Hello World";
+            }
+        </script>
+    </body>
 </html>
