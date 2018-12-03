@@ -24,35 +24,20 @@
     text-align: center;
     font-weight: lighter;">The WeatherMan</h1>
                     <div class="fwrapper">
-                        <br>
-                        <input placeholder="Take-off City" class="search" type="text" style="text-align: center;">
-                        <br>
-                        <br>
-                        <input placeholder="Destination City" class="search" type="text" style="text-align: center;">
-                        <br>
-                        <button class="sub" type="submit" style="width: 100px;
+                        <form>
+                            <br>
+                            <input placeholder="Flight Takeoff" class="search" type="text">
+                            <br>
+                            <br>
+                            <input placeholder="Flight Destination" class="search" type="text">
+                            <br>
+                            <button class="sub" type="submit" style="width: 100px;
     height: 50px;
     margin-top: 12px;
     font-size: 24px;">
-                            Go
+                                Go
 </button>
-                    </div>
-                    <div class='panel'>
-                        <h2 class='city' id='city'></h2>
-                        <div class='weather' id='weather'>
-                            <div class='group secondary'>
-                                <h3 id='dt'></h3>
-                                <h3 id='description'></h3>
-                            </div>
-                            <div class='group secondary'>
-                                <h3 id='wind'></h3>
-                                <h3 id='humidity'></h3>
-                            </div>
-                            <div class='temperature' id='temperature'>
-                                <h1 class='temp' id='temp'><i id='condition'></i> <span id='num'></span><a class='fahrenheit active' id='fahrenheit' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius' href="#">&deg;C</a></h1>
-                            </div>
-                            <div class='forecast' id='forecast'></div>
-                        </div>
+                        </form>
                     </div>
                     <div class="wrapper">
                         <div class="sun"></div>
