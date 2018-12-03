@@ -14,26 +14,12 @@
         <!-- Custom styles for this template -->         
         <link href="istyle.css" rel="stylesheet" type="text/css"> 
         <link href="icon.css" rel="stylesheet" type="text/css">
-        <link href="form.css" rel="stylesheet" type="text/css">
     </head>     
     <body style="background-color: #33495f;"> 
         <main class="content"> 
             <form class="form" style="background-color: #33495f;"> 
                 <div class="title"> 
-                    <h1 style="margin-top: 70px;
-    text-align: center;">The WeatherMan</h1>
-                    <div class="fwrapper">
-                        <form>
-                            <br>
-                            <input placeholder="Flight Takeoff" class="search" type="text">
-                            <br>
-                            <input placeholder="Flight Destination" class="search" type="text">
-                            <br>
-                            <button class="sub" type="submit">
-                                Go
-</button>
-                        </form>
-                    </div>
+                    <h1 style="margin-top: 70px;">Weatherman</h1>
                     <div class="wrapper">
                         <div class="sun"></div>
                         <div class="cloud">
@@ -122,8 +108,45 @@
                                 <li>Sleet</li>
                             </ul>
                         </div>
+                    </div>
+                    <p>Check the Weather on your flights locations!</p> 
+                </div>                 
+                <div class="progress"> 
+                    <p>Step 1 of 3</p> 
+                    <div class="progress-bar"> 
+                        <div class="bar-pink"> 
+                            <p>33%</p> 
+                        </div>                         
                     </div>                     
-                </div>
+                </div>                 
+                <div class="categories"> 
+                    <button class="flights button">Flights</button>                     
+                    <button class="Hotels button">Hotels</button>                     
+                    <button class="Packages button">Weather</button>                     
+                </div>                 
+                <div class="row1"> 
+                    <div class="locations from-location1"> 
+                        <label class="from-location2" for="from">From:</label>                         
+                        <input class="to" type="text" name="firstname"> 
+                    </div>                     
+                    <div class="locations to-location1"> 
+                        <label class="to-location2" for="to">To:</label>                         
+                        <input class="to" type="text" name="firstname"> 
+                    </div>                     
+                </div>                 
+                <div class="row2"> 
+                    <div class="dates depart"> 
+                        <label class="depart-date" for="depart">Depart:</label>                         
+                        <input class="departure-date" type="date"> 
+                    </div>                     
+                    <div class="dates return"> 
+                        <label class="returning-date" for="return">Return:</label>                         
+                        <input class="return-date" type="date"> 
+                    </div>                     
+                </div>                 
+                <div class="next-button"> 
+                    <button class="next" value="submit">Let's Fly!</button>                     
+                </div>                 
             </form>             
         </main>         
     </body>     

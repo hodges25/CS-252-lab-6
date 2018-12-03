@@ -22,18 +22,6 @@
                 <div class="title"> 
                     <h1 style="margin-top: 70px;
     text-align: center;">The WeatherMan</h1>
-                    <div class="fwrapper">
-                        <form>
-                            <br>
-                            <input placeholder="Flight Takeoff" class="search" type="text">
-                            <br>
-                            <input placeholder="Flight Destination" class="search" type="text">
-                            <br>
-                            <button class="sub" type="submit">
-                                Go
-</button>
-                        </form>
-                    </div>
                     <div class="wrapper">
                         <div class="sun"></div>
                         <div class="cloud">
@@ -121,6 +109,31 @@
                                 <li>Rain</li>
                                 <li>Sleet</li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class='wrapper'>
+                        <search>
+                            <form>
+                                <input class='searchbar transparent' id='search' type='text' placeholder='enter city, country' />
+                                <input class='button transparent' id='button' type="submit" value='GO' />
+                            </form>
+                        </search>
+                        <div class='panel'>
+                            <h2 class='city' id='city'></h2>
+                            <div class='weather' id='weather'>
+                                <div class='group secondary'>
+                                    <h3 id='dt'></h3>
+                                    <h3 id='description'></h3>
+                                </div>
+                                <div class='group secondary'>
+                                    <h3 id='wind'></h3>
+                                    <h3 id='humidity'></h3>
+                                </div>
+                                <div class='temperature' id='temperature'>
+                                    <h1 class='temp' id='temp'><i id='condition'></i> <span id='num'></span><a class='fahrenheit active' id='fahrenheit' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius' href="#">&deg;C</a></h1>
+                                </div>
+                                <div class='forecast' id='forecast'></div>
+                            </div>
                         </div>
                     </div>                     
                 </div>
