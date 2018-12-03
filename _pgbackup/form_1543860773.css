@@ -11,31 +11,11 @@
     font-size: 5vh;
     background: none;
     border: none;
-    border-bottom: 2px solid white;
-}
-
-.search::-webkit-input-placeholder {
-    color: white;
-    opacity: 0.35;
-}
-
-.search::-moz-placeholder {
-    color: white;
-    opacity: 0.35;
-}
-
-.search:-ms-input-placeholder {
-    color: white;
-    opacity: 0.35;
-}
-
-.search:-moz-placeholder {
-    color: white;
-    opacity: 0.35;
+    border-bottom: 1px solid white;
 }
 
 .search:focus {
-    color: white;
+    color: #fcf656;
     outline: none;
 }
 
@@ -46,5 +26,5 @@
 }
 
 .sub:hover {
-    background: #094cb0;
+    background: #2e3d54;
 }
