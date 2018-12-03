@@ -18,24 +18,41 @@
     </head>     
     <body style="background-color: #015ebb !important;"> 
         <main class="content"> 
-            <form method="POST" id="form" style="background-color: #015ebb;"> 
+            <form class="form" style="background-color: #015ebb;"> 
                 <div class="title"> 
                     <h1 style="margin-top: 70px;
     text-align: center;
     font-weight: lighter;">The WeatherMan</h1>
-                    <div id="test" class="fwrapper">
+                    <div class="fwrapper">
                         <br>
-                        <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;">
+                        <input placeholder="Take-off City" class="search" type="text" style="text-align: center;">
                         <br>
                         <br>
                         <input placeholder="Destination City" class="search" type="text" style="text-align: center;">
                         <br>
-                        <button onclick="myFunction()" id="button" class="sub" style="width: 100px;
+                        <button class="sub" type="submit" style="width: 100px;
     height: 50px;
     margin-top: 12px;
     font-size: 24px;">
                             Go
 </button>
+                    </div>
+                    <div class='panel'>
+                        <h2 class='city' id='city'></h2>
+                        <div class='weather' id='weather'>
+                            <div class='group secondary'>
+                                <h3 id='dt'></h3>
+                                <h3 id='description'></h3>
+                            </div>
+                            <div class='group secondary'>
+                                <h3 id='wind'></h3>
+                                <h3 id='humidity'></h3>
+                            </div>
+                            <div class='temperature' id='temperature'>
+                                <h1 class='temp' id='temp'><i id='condition'></i> <span id='num'></span><a class='fahrenheit active' id='fahrenheit' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius' href="#">&deg;C</a></h1>
+                            </div>
+                            <div class='forecast' id='forecast'></div>
+                        </div>
                     </div>
                     <div class="wrapper">
                         <div class="sun"></div>
@@ -127,20 +144,7 @@
                         </div>
                     </div>                     
                 </div>
-            </form>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <script>
-            function myFunction() {
-  			  var x = document.getElementById("test");
-  			  if (x.style.display === "none") {
-      			  x.style.display = "block";
-   			 } else {
-      			  x.style.display = "none";
-    		 }
-		   }
-            </script>
-            <div class="panel">
-</div>
-        </main>
+            </form>             
+        </main>         
     </body>     
 </html>

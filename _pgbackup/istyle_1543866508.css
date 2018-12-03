@@ -6,11 +6,11 @@ body {
     font-family: 'Open Sans', sans serif;
     height: 100%;
     background-image: linear-gradient(
-        to bottom,
-        #F3F3F3,
-        #F3F3F3 10%,
-        #0FD8D8 60%,
-        #0FD8D8 80%);
+    to bottom,
+    #F3F3F3,
+    #F3F3F3 10%,
+    #0FD8D8 60%,
+    #0FD8D8 80%);
     background-repeat: no-repeat;
 }
 
