@@ -189,17 +189,11 @@
                         
                         var suggestionsContainer = document.getElementById('');
                         function clearOldSuggestions(){
-                            /*var x = document.getElementById("from-input");
-                            /*x.removeChild(x.childNodes[0]);
-                            x.removeChild(x.childNodes[1]);
-                            x.removeChild(x.childNodes[2]);
-                            x.removeChild(x.childNodes[3]);
-                            x.removeChild(x.childNodes[4]);*/
-  						 	suggestion1 = "";
-                            suggestion2 = "";
-                            suggestion3 = "";
-                            suggestion4 = "";
-                            suggestion5 = "";
+  						 	suggestion1 = null;
+                            suggestion2 = null;
+                            suggestion3 = null;
+                            suggestion4 = null;
+                            suggestion5 = null;
     					}
                         
                         function addSuggestionsToPanel(response){
@@ -207,40 +201,25 @@
    							var locations = response.suggestions,i;
                             for (i = 0; i < locations.length; i++) {
                              	   if(i==0){
-                                       suggestion1 = document.createElement("option");
-                                       suggestion1.innerHTML = locations[i].label;
-                                       var string = suggestion1.text || suggestion1.innerText || "";
-                                       console.log(string);
-                                       document.getElementById("from-input").appendChild(suggestion1);
-                                       	
+                                   		suggestion1 = locations[i].address.label;
+                                       	document.getElementById("from-input").appendChild(suggestion1);
+                                       	console.log("here");
                                    }
                                 	else if(i==1){
-                                        suggestion2 = document.createElement("option");
-                                       suggestion2.innerHTML = locations[i].label;
-                                       var string = suggestion2.text || suggestion2.innerText || "";
-                                       console.log(string);
-                                       document.getElementById("from-input").appendChild(suggestion2);
+                                        suggestion2 = locations[i].address.label;
+                                        document.getElementById("from-input").appendChild(suggestion2);
                                     }
                                 	else if(i==2){
-                                   		suggestion3 = document.createElement("option");
-                                       suggestion3.innerHTML = locations[i].label;
-                                       var string = suggestion3.text || suggestion3.innerText || "";
-                                       console.log(string);
-                                       document.getElementById("from-input").appendChild(suggestion3);
+                                   		suggestion3 = locations[i].address.label;
+                                        document.getElementById("from-input").appendChild(suggestion3);
                                    }
                                 	else if(i==3){
-                                   		suggestion4 = document.createElement("option");
-                                       suggestion4.innerHTML = locations[i].label;
-                                       var string = suggestion4.text || suggestion4.innerText || "";
-                                       console.log(string);
-                                       document.getElementById("from-input").appendChild(suggestion4);
+                                   		suggestion4 = locations[i].address.label;
+                                        document.getElementById("from-input").appendChild(suggestion4);
                                    }
                                 	else{
-                                   		suggestion5 = document.createElement("option");
-                                       suggestion5.innerHTML = locations[i].label;
-                                       var string = suggestion5.text || suggestion5.innerText || "";
-                                       console.log(string);
-                                       document.getElementById("from-input").appendChild(suggestion5);
+                                   		suggestion5 = locations[i].address.label;
+                                        document.getElementById("from-input").appendChild(suggestion5);
                                    }
                             }
                         }
