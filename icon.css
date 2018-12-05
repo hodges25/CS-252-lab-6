@@ -184,7 +184,7 @@ body {
 }
 
 .haze {
-    background: #015ebb;
+    background: #2591fe;
     position: absolute;
     bottom: 50px;
     left: 0px;
@@ -828,6 +828,6 @@ body {
     }
 
     100% {
-        oapcity: 0;
+        opacity: 0;
     }
 }
