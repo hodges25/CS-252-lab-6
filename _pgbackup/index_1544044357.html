@@ -23,6 +23,113 @@
                 <div class="title"> 
                     <h1 style="margin-top: 70px;
     text-align: center;
+<<<<<<< HEAD
+    font-weight: lighter;">The WeatherMan</h1>
+                    <div id="test" class="fwrapper">
+                        <br>
+                        <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;">
+                        <br>
+                        <br>
+                        <input placeholder="Destination City" class="search" type="text" style="text-align: center;">
+                        <br>
+                        <br>
+                        <input placeholder="Date" class="search" type="date" style="text-align: center;" value="getDate()" id="curDate">
+                        <br>
+                        <button onclick="myFunction()" id="button" class="sub" style="width: 100px;height: 50px;
+                                                                                      margin-top: 12px;
+                                                                                      font-size: 24px;">
+                            Go
+</button>
+                    </div>
+                    <div class="wrapper">
+                        <div class="sun"></div>
+                        <div class="cloud">
+                            <div class="cloud1">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="cloud1 c_shadow">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cloud_s">
+                            <div class="cloud1">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="cloud1 c_shadow">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cloud_vs">
+                            <div class="cloud1">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="cloud1 c_shadow">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="haze"></div>
+                        <div class="haze_stripe"></div>
+                        <div class="haze_stripe"></div>
+                        <div class="haze_stripe"></div>
+                        <div class="thunder"></div>
+                        <div class="rain">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="sleet">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <ul>
+                                <li>Sunny</li>
+                                <li>Partly Sunny</li>
+                                <li>Partly Cloudy</li>
+                                <li>Mostly Cloudy</li>
+                                <li>Cloudy</li>
+                                <li>Hazy</li>
+                                <li>Thunderstorm</li>
+                                <li>Rain</li>
+                                <li>Sleet</li>
+                            </ul>
+                        </div>
+=======
     font-weight: lighter;">The WeatherMan</h1> 
                     <div class="wrapper1"> 
                         <search id="test" class="fwrapper"> 
@@ -54,6 +161,7 @@
                                 <div class='forecast' id='forecast'></div>                                 
                             </div>                             
                         </div>                         
+>>>>>>> f8d434223866a4baed0a795af0d8260b7bc06ce0
                     </div>                     
                     <div class="wrapper"> 
                         <div class="sun"></div>                         
@@ -135,6 +243,26 @@
             </div>             
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>             
             <script>
+<<<<<<< HEAD
+                function myFunction() {
+  			  		var x = document.getElementById("test");
+  			  		if (x.style.display === "none") {
+      			  		x.style.display = "block";
+   			 		}	
+                    else {
+      			  		x.style.display = "none";
+    		 		}
+		   		};
+    
+                /*function getDate() {
+                    curDate = "2018-12-05"
+                    return curDate
+                };*/
+            </script>
+            <div class="panel">
+</div>
+        </main>
+=======
             function titleCase(str) {
   return str.split(' ').map(function (word) {
     return word[0].toUpperCase() + word.substring(1);
@@ -361,5 +489,6 @@ z      }
 });
             </script>             
         </main>         
+>>>>>>> f8d434223866a4baed0a795af0d8260b7bc06ce0
     </body>     
 </html>
