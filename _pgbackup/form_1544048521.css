@@ -100,6 +100,7 @@
 
 .panel2 {
     width: 45%;
+    transform: translateY(30px);
     position: absolute;
     right: 10px;
     display: inline-block;
@@ -112,22 +113,8 @@
     display: inline-block;
 }
 
-.weather2 {
-    width: 100%;
-    margin-top: 20px;
-    display: inline-block;
-}
-
 .city {
     text-align: left;
-    border-bottom: solid thin white;
-    text-transform: uppercase;
-    color: #E8E8E8;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.city2 {
-    text-align: right;
     border-bottom: solid thin white;
     text-transform: uppercase;
     color: #E8E8E8;
@@ -142,29 +129,11 @@
     clear: both;
 }
 
-.group2 {
-    width: 165px;
-    margin-bottom: 20px;
-    text-align: left;
-    float: left;
-    clear: both;
-}
-
 #temp {
     visibility: hidden;
 }
 
-#temp2 {
-    visibility: hidden;
-}
-
 .temp {
-    font-size: 4.5em;
-    font-weight: 300;
-    line-height: 0.75;
-}
-
-.temp2 {
     font-size: 4.5em;
     font-weight: 300;
     line-height: 0.75;
@@ -247,9 +216,5 @@
 }
 
 #city {
-    visibility: hidden;
-}
-
-#city2 {
     visibility: hidden;
 }
