@@ -131,7 +131,7 @@
                 <div class="row1"> 
                     <div class="locations from-location1"> 
                         <label class="from-location2" for="from">From:</label>                         
-                        <input type="text" id="from-textbox" onkeyup="autoCompleteListener('1')" list="from-input"/>
+                        <input type="text" id="from-textbox" onkeyup="autoCompleteListener()" list="from-input"/>
                         <datalist id="from-input"></datalist>
                     </div>
                     <script type="text/javascript" charset="UTF-8">
@@ -141,19 +141,10 @@
                         var APPLICATION_ID = 'qsXGGn36lGCPigOuX4aG';
                         var APPLICATION_CODE = 'vYX90ZTsnEWtifSuSoy2yw';
                         var suggestion1,suggestion2,suggestion3,suggestion4,suggestion5;
-                        var script; 
-                           console.log("c");
-                         function autoCompleteListener(a) {
-                                if(a == '1')
-                                 script = 1;
-                             else
-                                 script = 2;
-                             if(script == 1) 
-                                var textBox = document.getElementById("from-textbox").value;
-                          	else
-                                var textBox = document.getElementById("to-textbox").value;
-                             
-                                 console.log(script);
+                         console.log("c");
+                         function autoCompleteListener() {
+                             var textBox = document.getElementById("from-textbox").value;
+                             console.log("b");
 							 if (query != textBox){
     							if (textBox.length >= 1){
      								/**
@@ -220,50 +211,36 @@
                                        suggestion1.innerHTML = locations[i].label;
                                        var string = suggestion1.text || suggestion1.innerText || "";
                                        console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion1);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion1);
+                                       document.getElementById("from-input").appendChild(suggestion1);
+                                       	
                                    }
                                 	else if(i==1){
                                         suggestion2 = document.createElement("option");
                                        suggestion2.innerHTML = locations[i].label;
                                        var string = suggestion2.text || suggestion2.innerText || "";
                                        console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion2);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion2);
+                                       document.getElementById("from-input").appendChild(suggestion2);
                                     }
                                 	else if(i==2){
                                    		suggestion3 = document.createElement("option");
                                        suggestion3.innerHTML = locations[i].label;
                                        var string = suggestion3.text || suggestion3.innerText || "";
                                        console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion3);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion3);
+                                       document.getElementById("from-input").appendChild(suggestion3);
                                    }
                                 	else if(i==3){
                                    		suggestion4 = document.createElement("option");
                                        suggestion4.innerHTML = locations[i].label;
                                        var string = suggestion4.text || suggestion4.innerText || "";
                                        console.log(string);
-                                      if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion4);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion4);
+                                       document.getElementById("from-input").appendChild(suggestion4);
                                    }
                                 	else{
                                    		suggestion5 = document.createElement("option");
                                        suggestion5.innerHTML = locations[i].label;
                                        var string = suggestion5.text || suggestion5.innerText || "";
                                        console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion5);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion5);
+                                       document.getElementById("from-input").appendChild(suggestion5);
                                    }
                             }
                         }
@@ -271,8 +248,7 @@
                      </script>
                     <div class="locations to-location1"> 
                         <label class="to-location2" for="to">To:</label>                         
-                        <input type="text" id="to-textbox" onkeyup="autoCompleteListener('2')" list="to-input"/>
-                        <datalist id="to-input"></datalist>
+                        <input class="to" type="text" name="firstname"> 
                     </div>                     
                 </div>                 
                 <div class="row2"> 
