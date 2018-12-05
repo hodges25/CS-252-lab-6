@@ -7,6 +7,47 @@ body {
     height: 100%;
 }
 
+.login {
+    color: white;
+    z-index: 10;
+    background: #3F51B5;
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    padding: 20px;
+    top: 75%;
+    margin-top: -140px;
+}
+
+.login input {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    outline: none;
+    padding: 15px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.login input:focus {
+    border: 1px solid grey;
+}
+
+.login button {
+    margin-left: 2%;
+    float: left;
+    background: #5d8ffc;
+    color: white;
+    border: 0px;
+    padding: 15px;
+    border-radius: 5px;
+    display: block;
+    width: 40%;
+}
+
 .content {
     max-width: 65%;
     max-height: 100%;
