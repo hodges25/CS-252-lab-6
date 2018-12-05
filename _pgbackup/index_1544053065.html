@@ -15,22 +15,18 @@
         <link href="istyle.css" rel="stylesheet" type="text/css"> 
         <link href="icon.css" rel="stylesheet" type="text/css"> 
         <link href="form.css" rel="stylesheet" type="text/css"> 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet" type="text/css"> 
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-        <script src="index.js"></script>         
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet" type="text/css">
+        <script src="index.js"></script>
     </head>     
     <body> 
-        <main class="content"> 
-            <div class="login"> 
-                <h2>Login</h2> 
-                <input id="email" type="email" placeholder="Email..."/> 
-                <input id="password" type="password" placeholder="Password..."/> 
-                <button onclick="login()">Login to Account</button>                 
-                <button>Sign Up</button>                 
-            </div>             
+        <main class="content">
+            <div class="login">
+                <h2>Login</h2>
+                <input id="email" type="email" placeholder="Email..." />
+                <input id="password" type="password" placeholder="Password..." />
+                <button onclick="login()">Login to Account</button>
+                <button>Sign Up</button>
+            </div>
             <div> 
                 <div class="title"> 
                     <h1 style="margin-top: 70px;
@@ -39,10 +35,8 @@
                     <div class="wrapper1"> 
                         <search id="test" class="fwrapper"> 
                             <form> 
-                                <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;" onkeyup="autoCompleteListener('1')" list="from-input"/>
-                                <datalist id="from-input"></datalist>
-                                <input id="search2" placeholder="Destination City" class="search2" type="text" style="text-align: center;" onkeyup="autoCompleteListener('2')" list="to-input"/> 
-                                <datalist id="to-input"></datalist>
+                                <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;"> 
+                                <input id="search2" placeholder="Destination City" class="search2" type="text" style="text-align: center;"> 
                                 <button id="button" class="button" type="submit" style="width: 100px;
     height: 50px;
     margin-top: 12px;
@@ -84,7 +78,7 @@
                                 </div>                                 
                                 <div class='forecast' id='forecast2'></div>                                 
                             </div>                             
-                        </div>                         
+                        </div>
                     </div>                     
                     <div class="wrapper"> 
                         <div class="sun"></div>                         
@@ -327,7 +321,7 @@ z      }
   });
 
 });
-            </script>             
+            </script>
             <script>
             function titleCase(str) {
   return str.split(' ').map(function (word) {
@@ -554,142 +548,7 @@ z      }
   });
 
 });
-            </script>             
-            <script type="text/javascript" charset="UTF-8">
-                     	 var AUTOCOMPLETION_URL = 'https://autocomplete.geocoder.api.here.com/6.2/suggest.json',
-    ajaxRequest = new XMLHttpRequest(),
-    query = '';
-                        var APPLICATION_ID = 'qsXGGn36lGCPigOuX4aG';
-                        var APPLICATION_CODE = 'vYX90ZTsnEWtifSuSoy2yw';
-                        var suggestion1,suggestion2,suggestion3,suggestion4,suggestion5;
-                        var script; 
-                           console.log("c");
-                         function autoCompleteListener(a) {
-                                if(a == '1')
-                                 script = 1;
-                             else
-                                 script = 2;
-                             if(script == 1) 
-                                var textBox = document.getElementById("search").value;
-                          	else
-                                var textBox = document.getElementById("search2").value;
-                             
-                                 console.log(script);
-							 if (query != textBox){
-    							if (textBox.length >= 1){
-     								/**
-     								* A full list of available request parameters can be found in the Geocoder Autocompletion
-      								* API documentation.
-      								*
-      								*/
-                                    console.log(textBox);
-      								var params = '?' +
-       								'query=' +  encodeURIComponent(textBox) +   // The search text which is the basis of the query
-        							'&beginHighlight=' + encodeURIComponent('<mark>') + //  Mark the beginning of the match in a token. 
-        							'&endHighlight=' + encodeURIComponent('</mark>') + //  Mark the end of the match in a token. 
-       								'&maxresults=5' +  // The upper limit the for number of suggestions to be included 
-                         			// in the response.  Default is set to 5.
-        							'&app_id=' + APPLICATION_ID +
-        							'&app_code=' + APPLICATION_CODE;
-      								ajaxRequest.open('GET', AUTOCOMPLETION_URL + params );
-      								ajaxRequest.send();
-    							}
- 							}
- 							query = textBox;
-						}
-                        
-                        function onAutoCompleteSuccess() {
-	 						/*
-							* The styling of the suggestions response on the map is entirely under the developer's control.
-  							* A representitive styling can be found the full JS + HTML code of this example
-  							* in the functions below:
-  							*/
-  							clearOldSuggestions();
-  							addSuggestionsToPanel(this.response);  // In this context, 'this' means the XMLHttpRequest itself.
-  							//addSuggestionsToMap(this.response);
-						}
-                        
-                        function onAutoCompleteFailed() {
-  							alert('Ooops!');
-						}
-                        
-                        ajaxRequest.addEventListener("load", onAutoCompleteSuccess);
-						ajaxRequest.addEventListener("error", onAutoCompleteFailed);
-						ajaxRequest.responseType = "json";
-                        
-                        var suggestionsContainer = document.getElementById('');
-                        function clearOldSuggestions(){
-                            /*var x = document.getElementById("from-input");
-                            /*x.removeChild(x.childNodes[0]);
-                            x.removeChild(x.childNodes[1]);
-                            x.removeChild(x.childNodes[2]);
-                            x.removeChild(x.childNodes[3]);
-                            x.removeChild(x.childNodes[4]);*/
-  						 	suggestion1 = "";
-                            suggestion2 = "";
-                            suggestion3 = "";
-                            suggestion4 = "";
-                            suggestion5 = "";
-    					}
-                        
-                        function addSuggestionsToPanel(response){
-                            console.log(response.suggestions[0].label);
-   							var locations = response.suggestions,i;
-                            for (i = 0; i < locations.length; i++) {
-                             	   if(i==0){
-                                       suggestion1 = document.createElement("option");
-                                       suggestion1.innerHTML = locations[i].label;
-                                       var string = suggestion1.text || suggestion1.innerText || "";
-                                       console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion1);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion1);
-                                   }
-                                	else if(i==1){
-                                        suggestion2 = document.createElement("option");
-                                       suggestion2.innerHTML = locations[i].label;
-                                       var string = suggestion2.text || suggestion2.innerText || "";
-                                       console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion2);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion2);
-                                    }
-                                	else if(i==2){
-                                   		suggestion3 = document.createElement("option");
-                                       suggestion3.innerHTML = locations[i].label;
-                                       var string = suggestion3.text || suggestion3.innerText || "";
-                                       console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("form-input").appendChild(suggestion3);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion3);
-                                   }
-                                	else if(i==3){
-                                   		suggestion4 = document.createElement("option");
-                                       suggestion4.innerHTML = locations[i].label;
-                                       var string = suggestion4.text || suggestion4.innerText || "";
-                                       console.log(string);
-                                      if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion4);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion4);
-                                   }
-                                	else{
-                                   		suggestion5 = document.createElement("option");
-                                       suggestion5.innerHTML = locations[i].label;
-                                       var string = suggestion5.text || suggestion5.innerText || "";
-                                       console.log(string);
-                                       if(script=='1')
-                                       		document.getElementById("from-input").appendChild(suggestion5);
-                                       	else
-                                            document.getElementById("to-input").appendChild(suggestion5);
-                                   }
-                            }
-                        }
-                        
-                     </script>
+            </script>
         </main>         
     </body>     
 </html>
