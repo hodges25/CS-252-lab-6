@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #fff;
+    background: #3F51B5;
 }
 
 .wrapper {
@@ -16,8 +16,9 @@ body {
 
 .sun {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 70px;
+    opacity: 0;
+    right: 80px;
     width: 85px;
     height: 85px;
     background: #f9db62;
@@ -28,10 +29,10 @@ body {
 
 .cloud {
     position: absolute;
-    bottom: 12px;
+    bottom: 30px;
     left: 8px;
     z-index: 2;
-    opacity: 0;
+    opacity: 1;
     animation: cloud 10s 0s linear infinite;
 }
 
@@ -184,7 +185,11 @@ body {
 }
 
 .haze {
+<<<<<<< HEAD
     background: #2591fe;
+=======
+    background: white;
+>>>>>>> f8d434223866a4baed0a795af0d8260b7bc06ce0
     position: absolute;
     bottom: 50px;
     left: 0px;
@@ -386,6 +391,7 @@ body {
 
 .text ul li:nth-child(9) {
     animation: fade_in 10.0s 8.2s linear infinite;
+<<<<<<< HEAD
 }
 
 @keyframes sun{
@@ -830,4 +836,6 @@ body {
     100% {
         opacity: 0;
     }
+=======
+>>>>>>> f8d434223866a4baed0a795af0d8260b7bc06ce0
 }
