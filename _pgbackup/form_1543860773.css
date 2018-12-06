@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100');
+
+* {
+    font-family: 'Roboto' !important;
+}
+
+.search {
+    height: 50px;
+    font-weight: 300;
+    color: white;
+    font-size: 5vh;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.search:focus {
+    color: #fcf656;
+    outline: none;
+}
+
+.sub {
+    color: white;
+    background: none;
+    border: none;
+}
+
+.sub:hover {
+    background: #2e3d54;
+}

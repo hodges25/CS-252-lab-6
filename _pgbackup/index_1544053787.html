@@ -39,9 +39,9 @@
                     <div class="wrapper1"> 
                         <search id="test" class="fwrapper"> 
                             <form> 
-                                <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;" onkeyup="autoCompleteListener('1')" list="from-input"/>
+                                <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;" onkeyup="autoCompleteListener('1')" list="search"/>
                                 <datalist id="from-input"></datalist>
-                                <input id="search2" placeholder="Destination City" class="search2" type="text" style="text-align: center;" onkeyup="autoCompleteListener('2')" list="to-input"/> 
+                                <input id="search2" placeholder="Destination City" class="search2" type="text" style="text-align: center;" onkeyup="autoCompleteListener('2')" list="search2"/> 
                                 <datalist id="to-input"></datalist>
                                 <button id="button" class="button" type="submit" style="width: 100px;
     height: 50px;
@@ -650,7 +650,7 @@ z      }
                                         suggestion2 = document.createElement("option");
                                        suggestion2.innerHTML = locations[i].label;
                                        var string = suggestion2.text || suggestion2.innerText || "";
-                                       console.log(string);
+                                       console.log(suggestion2);
                                        if(script=='1')
                                        		document.getElementById("from-input").appendChild(suggestion2);
                                        	else
@@ -660,7 +660,7 @@ z      }
                                    		suggestion3 = document.createElement("option");
                                        suggestion3.innerHTML = locations[i].label;
                                        var string = suggestion3.text || suggestion3.innerText || "";
-                                       console.log(string);
+                                       console.log(suggestion3);
                                        if(script=='1')
                                        		document.getElementById("form-input").appendChild(suggestion3);
                                        	else

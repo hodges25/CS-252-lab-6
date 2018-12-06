@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100');
+
+* {
+    font-family: 'Roboto' !important;
+}
+
+.search {
+    position: absolute;
+    left: 10vw;
+    height: 50px;
+    font-weight: 300;
+    color: white;
+    font-size: 5vh;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.search2 {
+    position: absolute;
+    right: 10vw;
+    height: 50px;
+    font-weight: 300;
+    color: white;
+    font-size: 5vh;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.search::-webkit-input-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search::-moz-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search:-ms-input-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search:-moz-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search2::-webkit-input-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search2::-moz-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search2:-ms-input-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search2:-moz-placeholder {
+    color: white;
+    opacity: 0.35;
+}
+
+.search:focus {
+    color: white;
+    outline: none;
+}
+
+.search2:focus {
+    color: white;
+    outline: none;
+}
+
+.button {
+    background: #3F51B5;
+    height: 45px;
+    margin: 1em 0 4em;
+    padding: 0;
+    font: 400 1rem 'Roboto';
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+}
+
+.panel {
+    width: 45%;
+    position: absolute;
+    left: 10px;
+    display: inline-block;
+    color: white;
+}
+
+.panel2 {
+    width: 45%;
+    transform: translateY(30px);
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    color: white;
+}
+
+.weather {
+    width: 100%;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.city {
+    text-align: left;
+    border-bottom: solid thin white;
+    text-transform: uppercase;
+    color: #E8E8E8;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.group {
+    width: 165px;
+    margin-bottom: 20px;
+    text-align: right;
+    float: right;
+    clear: both;
+}
+
+#temp {
+    visibility: hidden;
+}
+
+.temp {
+    font-size: 4.5em;
+    font-weight: 300;
+    line-height: 0.75;
+}
+
+.celsius,
+.fahrenheit,
+.divider {
+    font-size: 1.75rem;
+    vertical-align: super;
+}
+
+.divider {
+    margin: 0 0.05em;
+}
+
+.forecast {
+    display: table;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.block {
+    display: table-cell;
+    padding: 1.5em 0 0 0;
+    text-align: center;
+}
+
+.high {
+    font-weight: 300;
+    margin: 0.25em 0;
+}
+
+.secondary {
+    opacity: 0.7;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.hot {
+    background: #FF5722;
+}
+
+.warm {
+    background: #FF6F00;
+}
+
+.cool {
+    background: #2196F3;
+}
+
+.cold {
+    background: #3F51B5;
+}
+
+.color404 {
+    background: #161616;
+}
+
+.button-hot {
+    background: #BF360C;
+}
+
+.button-warm {
+    background: #B34E00;
+}
+
+.button-cool {
+    background: #0D47A1;
+}
+
+.button-cold {
+    background: #1A237E;
+}
+
+.button404 {
+    background: black;
+}
+
+#city {
+    visibility: hidden;
+}
