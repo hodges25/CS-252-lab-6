@@ -16,11 +16,13 @@
         <link href="icon.css" rel="stylesheet" type="text/css"> 
         <link href="form.css" rel="stylesheet" type="text/css"> 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet" type="text/css">
-        <script src="index.js"></script>
     </head>     
     <body> 
         <main class="content">
-            <div id="logged_in" class="login">
+            <div id="logout" class="logout">
+                <button onclick="logout()" id="test" class="lo">Logout</button>
+            </div>
+            <div id="login_div" class="login">
                 <h2>Login</h2>
                 <input id="email" type="email" placeholder="Email..." />
                 <input id="password" type="password" placeholder="Password..." />
@@ -33,11 +35,11 @@
     text-align: center;
     font-weight: lighter;">The WeatherMan</h1> 
                     <div class="wrapper1"> 
-                        <search id="test" class="fwrapper"> 
+                        <search class="fwrapper"> 
                             <form> 
                                 <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;"> 
                                 <input id="search2" placeholder="Destination City" class="search2" type="text" style="text-align: center;"> 
-                                <button id="button" class="button" type="submit" style="width: 100px;
+                                <button onclick="check()" id="button" class="button" type="submit" style="width: 100px;
     height: 50px;
     margin-top: 12px;
     font-size: 24px;"> 
@@ -563,5 +565,6 @@ z      }
   };
   firebase.initializeApp(config);
 </script>
+        <script src="index.js"></script>
     </body>     
 </html>
