@@ -1,13 +1,11 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       //user signed in
-      document.getElementById("test").style.visibility = "hidden";
-       document.getElementById("login_div").style.visibility = "visible";
+      document.getElementById("test").style.visibility = "visible";
   } else {
       //no user signed in
       
-       document.getElementById("test").style.visibility = "visible";
-       document.getElementById("login_div").style.visibility = "hidden";
+       document.getElementById("test").style.visibility = "hidden";
   }
 });
 

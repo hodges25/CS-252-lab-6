@@ -7,25 +7,8 @@ body {
     height: 100%;
 }
 
-.lo {
-    color: white;
-    position: absolute;
-    border: 0;
-    background: #32408f;
-    right: 0;
-    top: 0;
-    height: 25px;
-    width: 100px;
-    border-radius: 5px;
-}
-
-.lo:hover {
-    border: 2px solid #606fc7;
-}
-
 .login {
     color: white;
-    display: block;
     z-index: 10;
     background: #3F51B5;
     position: absolute;
@@ -56,17 +39,13 @@ body {
 .login button {
     margin-left: 2%;
     float: left;
-    background: #32408f;
+    background: #5d8ffc;
     color: white;
     border: 0px;
     padding: 15px;
     border-radius: 5px;
     display: block;
     width: 40%;
-}
-
-.login button:hover {
-    border: 2px solid #606fc7;
 }
 
 .content {

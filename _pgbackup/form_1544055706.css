@@ -79,8 +79,7 @@
 }
 
 .button {
-    background: #32408f;
-    border-radius: 2px;
+    background: #3F51B5;
     height: 45px;
     margin: 1em 0 4em;
     padding: 0;
@@ -89,10 +88,6 @@
     text-transform: uppercase;
     color: white;
     border: none;
-}
-
-.button:hover {
-    border: 1px solid white;
 }
 
 .panel {
