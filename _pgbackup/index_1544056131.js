@@ -1,13 +1,12 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       //user signed in
-      document.getElementById("test").style.visibility = "hidden";
-       document.getElementById("login_div").style.visibility = "visible";
+      window.alert("test");
+      document.getElementById("login_div").style.display = "none";
   } else {
       //no user signed in
       
-       document.getElementById("test").style.visibility = "visible";
-       document.getElementById("login_div").style.visibility = "hidden";
+       document.getElementById("login_div").style.display = "block";
   }
 });
 
@@ -33,13 +32,5 @@ function signUp(){
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
-});   
-}
-
-function logout(){
- 	firebase.auth().signOut().then(function() {
-  // Sign-out successful.
-}).catch(function(error) {
-  // An error happened.
 });   
 }

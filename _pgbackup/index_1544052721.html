@@ -16,17 +16,15 @@
         <link href="icon.css" rel="stylesheet" type="text/css"> 
         <link href="form.css" rel="stylesheet" type="text/css"> 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet" type="text/css">
+        <script src="index.js"></script>
     </head>     
     <body> 
         <main class="content">
-            <div id="logout" class="logout">
-                <button onclick="logout" id="test" class="lo">Logout</button>
-            </div>
-            <div id="login_div" class="login">
+            <div id="logged_in" class="login">
                 <h2>Login</h2>
                 <input id="email" type="email" placeholder="Email..." />
                 <input id="password" type="password" placeholder="Password..." />
-                <button onclick="login()">Login to Account</button>
+                <button id="test" onclick="login()">Login to Account</button>
                 <button onclick="signUp()">Sign Up</button>
             </div>
             <div> 
@@ -552,19 +550,5 @@ z      }
 });
             </script>
         </main>         
-        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-        <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyD399t0Vz9WjgeDznsX_tyRJigXinzxQy8",
-    authDomain: "weatherman-efbcf.firebaseapp.com",
-    databaseURL: "https://weatherman-efbcf.firebaseio.com",
-    projectId: "weatherman-efbcf",
-    storageBucket: "weatherman-efbcf.appspot.com",
-    messagingSenderId: "28342913520"
-  };
-  firebase.initializeApp(config);
-</script>
-        <script src="index.js"></script>
     </body>     
 </html>
