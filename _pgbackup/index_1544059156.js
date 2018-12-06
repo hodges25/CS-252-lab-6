@@ -1,9 +1,12 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-      document.getElementById("test").style.display = "hidden";
-      window.alert("You are logged in");
+      //user signed in
+      document.getElementById("test").style.visibility = "visible";
+       document.getElementById("login_div").style.visibility = "hidden";
   } else {
-      document.getElementById("test").style.display = "hidden";
+      //no user signed in
+       document.getElementById("test").style.visibility = "hidden";
+       document.getElementById("login_div").style.visibility = "visbile";
   }
 });
 
@@ -20,15 +23,23 @@ function login(){
 });
 }
 
+
 function signUp(){
     var userEmail = document.getElementById("email").value;
     var userPass = document.getElementById("password").value;
-    
  	firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
   window.alert("Error : "+ errorMessage);
   // ...
+});   
+}
+
+function logout(){
+ firebase.auth().signOut().then(function() {
+     window.reload();
+}).catch(function(error) {
+  // An error happened.
 });   
 }

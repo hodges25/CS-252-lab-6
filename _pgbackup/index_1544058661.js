@@ -35,12 +35,3 @@ function signUp(){
   // ...
 });   
 }
-
-function logout(){
- firebase.auth().signOut().then(function() {
-     
-}).catch(function(error) {
-  // An error happened.
-});   
-    window.reload();
-}
