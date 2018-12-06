@@ -31,16 +31,6 @@ function signUp(){
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  window.alert("Error : "+ errorMessage);
   // ...
 });   
-}
-
-function logout(){
- firebase.auth().signOut().then(function() {
-     
-}).catch(function(error) {
-  // An error happened.
-});   
-    window.reload();
 }
