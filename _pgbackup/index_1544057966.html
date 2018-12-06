@@ -18,14 +18,24 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet" type="text/css">
     </head>     
     <body> 
-        <main class="content"> 
+        <main class="content">
+            <div id="logout" class="logout">
+                <button onclick="logout" id="test" class="lo">Logout</button>
+            </div>
+            <div id="login_div" class="login">
+                <h2>Login</h2>
+                <input id="email" type="email" placeholder="Email..." />
+                <input id="password" type="password" placeholder="Password..." />
+                <button onclick="login()">Login to Account</button>
+                <button onclick="signUp()">Sign Up</button>
+            </div>
             <div> 
                 <div class="title"> 
                     <h1 style="margin-top: 70px;
     text-align: center;
     font-weight: lighter;">The WeatherMan</h1> 
                     <div class="wrapper1"> 
-                        <search id="test" class="fwrapper"> 
+                        <search class="fwrapper"> 
                             <form> 
                                 <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;"> 
                                 <input id="search2" placeholder="Destination City" class="search2" type="text" style="text-align: center;"> 
@@ -542,5 +552,20 @@ z      }
 });
             </script>
         </main>         
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+        <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD399t0Vz9WjgeDznsX_tyRJigXinzxQy8",
+    authDomain: "weatherman-efbcf.firebaseapp.com",
+    databaseURL: "https://weatherman-efbcf.firebaseio.com",
+    projectId: "weatherman-efbcf",
+    storageBucket: "weatherman-efbcf.appspot.com",
+    messagingSenderId: "28342913520"
+  };
+  firebase.initializeApp(config);
+</script>
+        <script src="index.js"></script>
     </body>     
 </html>
