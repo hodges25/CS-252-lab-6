@@ -59,7 +59,7 @@
                                     <h3 id='humidity'></h3> 
                                 </div>                                 
                                 <div class='temperature' id='temperature'> 
-                                    <h1 class='temp' id='temp'><i id='condition'></i> <span id='num'></span><a class='fahrenheit active' id='fahrenheit' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius' href="#">&deg;C</a></h1> 
+                                    <h1 class='temp' id='temp'> <span id='num'></span><a class='fahrenheit active' id='fahrenheit' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius' href="#">&deg;C</a></h1> 
                                 </div>                                 
                                 <div class='forecast' id='forecast'></div>                                 
                             </div>                             
@@ -76,7 +76,7 @@
                                     <h3 id='humidity2'></h3> 
                                 </div>                                 
                                 <div class='temperature' id='temperature2'> 
-                                    <h1 class='temp' id='temp2'><i id='condition2'></i> <span id='num2'></span><a class='fahrenheit active' id='fahrenheit2' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius2' href="#">&deg;C</a></h1> 
+                                    <h1 class='temp' id='temp2'><span id='num2'></span><a class='fahrenheit active' id='fahrenheit2' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius2' href="#">&deg;C</a></h1> 
                                 </div>                                 
                                 <div class='forecast' id='forecast2'></div>                                 
                             </div>                             
@@ -140,11 +140,12 @@ $(function() {
     $forecast = $weather.find('#forecast2'),
     $search = $wrapper.find('search'),
     $form = $search.find('form'),
-    $button = $form.find('#button');
+    $button = $form.find('#button'),
+    $lo = $('.lo');
 
   $.ajax({
       dataType: 'json',
-      url: '//ipapi.co/8.8.8.8/json/'
+      //url: '//ipapi.co/8.8.8.8/json/'
     })
     .then(function(data) {
       var yourLocation = data.city + ',' + data.postal + ',' + data.country;
@@ -153,7 +154,7 @@ $(function() {
 
   function getWeather(input) {
 
-    var appid = '92cce8a6e03200cbc867541a7e216fcc';
+    var appid = '6816d0a47e7122953ab021db391c10eb';
     var requestWeather = $.ajax({
       dataType: 'json',
       url: '//api.openweathermap.org/data/2.5/weather',
@@ -165,7 +166,7 @@ $(function() {
     });
     var requestForecast = $.ajax({
       dataType: 'json',
-      url: '//api.openweathermap.org/data/2.5/forecast/daily',
+     // url: '//api.openweathermap.org/data/2.5/forecast/daily',
       data: {
         q: input,
         units: 'imperial',
@@ -182,14 +183,18 @@ $(function() {
     requestWeather.done(function(data) {
 
       var weather = document.getElementById('weather');
-      if (data.cod === '404') {
-        $city.html('city not found');
-        setBackground('color404', 'button404');
-        weather.style.display = 'none';
-      } else weather.style.display = '';
-
+     
+      if (data.cod == "404") {
+          $city.html("city not found");
+        //alert(data.cod);
+          $('body').removeClass().addClass('color404')
+        //setBackground('color404', 'button404');
+       
+      } else{
+         weather.style.display = '';
+          //alert(data.cod);
+      }
       var dt = new Date(data.dt * 1000).toString().split(' ');
-
       var title = data.sys.country
         ? data.name + ', ' + data.sys.country
         : data.name;
@@ -218,11 +223,13 @@ $(function() {
 
       function setBackground(background, button) {
         $('body').removeClass().addClass(background);
-        $button.off().hover(function() {
-          $(this).removeClass('transparent').addClass(button);
-        }, function() {
-          $(this).removeClass().addClass('button transparent');
-        });
+        $('#test').removeClass('button-warm');
+        $('#test').removeClass('button-cool');
+        $('#test').removeClass('button-cold');
+        $('#test').removeClass('button-hot');
+        $('#test').addClass(button);
+        $('#button').addClass(button);
+        
       }
 
       if (data.main.temp >= 80) setBackground('hot', 'button-hot');
@@ -366,11 +373,12 @@ $(function() {
     $forecast = $weather.find('#forecast'),
     $search = $wrapper.find('search'),
     $form = $search.find('form'),
-    $button = $form.find('#button');
+    $button = $form.find('#button'),
+    $lo = $('.lo');
 
   $.ajax({
       dataType: 'json',
-      url: '//ipapi.co/8.8.8.8/json/'
+     // url: '//ipapi.co/8.8.8.8/json/'
     })
     .then(function(data) {
       var yourLocation = data.city + ',' + data.postal + ',' + data.country;
@@ -379,7 +387,7 @@ $(function() {
 
   function getWeather(input) {
 
-    var appid = '92cce8a6e03200cbc867541a7e216fcc';
+    var appid = '6816d0a47e7122953ab021db391c10eb';
     var requestWeather = $.ajax({
       dataType: 'json',
       url: '//api.openweathermap.org/data/2.5/weather',
@@ -391,7 +399,7 @@ $(function() {
     });
     var requestForecast = $.ajax({
       dataType: 'json',
-      url: '//api.openweathermap.org/data/2.5/forecast/daily',
+     // url: '//api.openweathermap.org/data/2.5/forecast/daily',
       data: {
         q: input,
         units: 'imperial',
@@ -408,7 +416,7 @@ $(function() {
     requestWeather.done(function(data) {
 
       var weather = document.getElementById('weather');
-      if (data.cod === '404') {
+      if (data.cod === "404") {
         $city.html('city not found');
         setBackground('color404', 'button404');
         weather.style.display = 'none';
@@ -444,11 +452,6 @@ $(function() {
       }
 
       
-
-      if (data.main.temp >= 80) setBackground('hot', 'button-hot');
-      else if (data.main.temp >= 70) setBackground('warm', 'button-warm');
-      else if (data.main.temp >= 60) setBackground('cool', 'button-cool');
-      else setBackground('cold', 'button-cold');
 
       switch (data.weather[0].icon) {
         case '01d':
