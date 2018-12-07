@@ -16,10 +16,10 @@
         <link href="icon.css" rel="stylesheet" type="text/css"> 
         <link href="form.css" rel="stylesheet" type="text/css"> 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet" type="text/css"> 
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>         
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>         
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>         
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>         
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
         <script src="index.js"></script>         
     </head>     
     <body> 
@@ -39,10 +39,10 @@
                     <div class="wrapper1"> 
                         <search id="test" class="fwrapper"> 
                             <form> 
-                                <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;" onkeyup="autoCompleteListener('1')" list="from-input"/> 
-                                <datalist id="from-input"></datalist>                                 
+                                <input id="search" placeholder="Take-off City" class="search" type="text" style="text-align: center;" onkeyup="autoCompleteListener('1')" list="from-input"/>
+                                <datalist id="from-input"></datalist>
                                 <input id="search2" placeholder="Destination City" class="search2" type="text" style="text-align: center;" onkeyup="autoCompleteListener('2')" list="to-input"/> 
-                                <datalist id="to-input"></datalist>                                 
+                                <datalist id="to-input"></datalist>
                                 <button id="button" class="button" type="submit" style="width: 100px;
     height: 50px;
     margin-top: 12px;
@@ -556,14 +556,15 @@ z      }
 });
             </script>             
             <script type="text/javascript" charset="UTF-8">
-                         var AUTOCOMPLETION_URL = 'https://autocomplete.geocoder.api.here.com/6.2/suggest.json',
+                     	 var AUTOCOMPLETION_URL = 'https://autocomplete.geocoder.api.here.com/6.2/suggest.json',
     ajaxRequest = new XMLHttpRequest(),
     query = '';
                         var APPLICATION_ID = 'qsXGGn36lGCPigOuX4aG';
                         var APPLICATION_CODE = 'vYX90ZTsnEWtifSuSoy2yw';
                         var suggestion1,suggestion2,suggestion3,suggestion4,suggestion5;
                         var script; 
-                        function autoCompleteListener(a) {
+                           console.log("c");
+                         function autoCompleteListener(a) {
                                 if(a == '1')
                                  script = 1;
                              else
@@ -573,7 +574,7 @@ z      }
                           	else
                                 var textBox = document.getElementById("search2").value;
                              
-                                 
+                                 console.log(script);
 							 if (query != textBox){
     							if (textBox.length >= 1){
      								/**
@@ -632,35 +633,14 @@ z      }
     					}
                         
                         function addSuggestionsToPanel(response){
-                        
-   							var locations = response.suggestions,i,match;
-                            console.log(locations);
+                            console.log(response.suggestions[0].label);
+   							var locations = response.suggestions,i;
                             for (i = 0; i < locations.length; i++) {
-                                	if(locations[i].matchLevel=="country")
-                                        match = "country";
-                                        else if(locations[i].matchLevel=="state")
-                                             match = "state";
-                                            else if(locations[i].matchLevel=="county")
-                                                 match = "county";
-                                                else if(locations[i].matchLevel=="city")
-                                                    match = "city";
-                                					else
-                                                        match = "None";
                              	   if(i==0){
                                        suggestion1 = document.createElement("option");
-                                       if(match == "city")
-                                           suggestion1.innerHTML = locations[i].address.city + ", " + locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "county")
-                                           suggestion1.innerHTML = locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "state")
-                                           suggestion1.innerHTML = locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "country")
-                                           suggestion1.innerHTML = locations[i].address.country;
-                                       else
-                                      		//window.alert("Invalid input check spelling and resubmit");
+                                       suggestion1.innerHTML = locations[i].label;
                                        var string = suggestion1.text || suggestion1.innerText || "";
-                                       console.log(locations[i].address.country);
-                                      	
+                                       console.log(string);
                                        if(script=='1')
                                        		document.getElementById("from-input").appendChild(suggestion1);
                                        	else
@@ -668,18 +648,9 @@ z      }
                                    }
                                 	else if(i==1){
                                         suggestion2 = document.createElement("option");
-                                       if(match == "city")
-                                           suggestion2.innerHTML = locations[i].address.city + ", " + locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "county")
-                                           suggestion2.innerHTML = locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "state")
-                                           suggestion2.innerHTML = locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "country")
-                                           suggestion2.innerHTML = locations[i].address.country;
-                                       else
-                                      		//window.alert("Invalid input check spelling and resubmit");
+                                       suggestion2.innerHTML = locations[i].label;
                                        var string = suggestion2.text || suggestion2.innerText || "";
-                                       
+                                       console.log(string);
                                        if(script=='1')
                                        		document.getElementById("from-input").appendChild(suggestion2);
                                        	else
@@ -687,18 +658,9 @@ z      }
                                     }
                                 	else if(i==2){
                                    		suggestion3 = document.createElement("option");
-                                       if(match == "city")
-                                           suggestion3.innerHTML = locations[i].address.city + ", " + locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "county")
-                                           suggestion3.innerHTML = locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "state")
-                                           suggestion3.innerHTML = locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "country")
-                                           suggestion3.innerHTML = locations[i].address.country;
-                                       else
-                                      		//window.alert("Invalid input check spelling and resubmit");
+                                       suggestion3.innerHTML = locations[i].label;
                                        var string = suggestion3.text || suggestion3.innerText || "";
-                                      
+                                       console.log(string);
                                        if(script=='1')
                                        		document.getElementById("form-input").appendChild(suggestion3);
                                        	else
@@ -706,18 +668,9 @@ z      }
                                    }
                                 	else if(i==3){
                                    		suggestion4 = document.createElement("option");
-                                       if(match == "city")
-                                           suggestion4.innerHTML = locations[i].address.city + ", " + locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "county")
-                                           suggestion4.innerHTML = locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "state")
-                                           suggestion4.innerHTML = locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "country")
-                                           suggestion4.innerHTML = locations[i].address.country;
-                                       else
-                                      		//window.alert("Invalid input check spelling and resubmit");
+                                       suggestion4.innerHTML = locations[i].label;
                                        var string = suggestion4.text || suggestion4.innerText || "";
-                                      
+                                       console.log(string);
                                       if(script=='1')
                                        		document.getElementById("from-input").appendChild(suggestion4);
                                        	else
@@ -725,18 +678,9 @@ z      }
                                    }
                                 	else{
                                    		suggestion5 = document.createElement("option");
-                                       if(match == "city")
-                                           suggestion5.innerHTML = locations[i].address.city + ", " + locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "county")
-                                           suggestion5.innerHTML = locations[i].address.county + ", " + locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "state")
-                                           suggestion5.innerHTML = locations[i].address.state + ", " + locations[i].address.country;
-                                       else if(match == "country")
-                                           suggestion5.innerHTML = locations[i].address.country;
-                                       else
-                                      		//window.alert("Invalid input check spelling and resubmit");
+                                       suggestion5.innerHTML = locations[i].label;
                                        var string = suggestion5.text || suggestion5.innerText || "";
-                                      
+                                       console.log(string);
                                        if(script=='1')
                                        		document.getElementById("from-input").appendChild(suggestion5);
                                        	else
@@ -744,7 +688,8 @@ z      }
                                    }
                             }
                         }
-                     </script>             
+                        
+                     </script>
         </main>         
     </body>     
 </html>
