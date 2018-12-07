@@ -1,12 +1,11 @@
 var flag = 0;
-var database = firebase.database();
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       //user signed in
       flag = 1;
       document.getElementById("test").style.visibility = "visible";
-      document.getElementById("login_div").style.visibility = "hidden";
+       document.getElementById("login_div").style.visibility = "hidden";
       window.alert("You have been signed in");
   } else {
       //no user signed in
@@ -14,13 +13,6 @@ firebase.auth().onAuthStateChanged(function(user) {
        document.getElementById("login_div").style.visibility = "visbile";
   }
 });
-
- function writeUserData(userEmail) {
- 		 firebase.database().ref('users/' + userId).set({
-  			  username: userEmail
-  	  });
-	  }
-      
 
 
 function check(){
@@ -44,7 +36,6 @@ function login(){
   window.alert("Error : "+ errorMessage);
   // ...
 });
-	writeUserData(userEmail);    
 }
 
 
