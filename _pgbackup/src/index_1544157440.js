@@ -44,7 +44,8 @@ function login(){
         
         database.child("users").orderByChild("email").equalTo(userEmail).once("value",snapshot => {
   		if (snapshot.exists()){
-      		window.alert("Thanks for coming back!")
+      		window.alert("This user is already logged in")
+            window.location.reload();
     	}else{
          	database.child("users").push().child("email").set(userEmail);	   
         }
@@ -71,6 +72,7 @@ function logout(){
 }).catch(function(error) {
   // An error happened
 });   
+
  flag = 1;
  window.location.reload();
 }

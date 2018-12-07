@@ -1,6 +1,6 @@
 var flag = 0;
 var database = firebase.database().ref();
-var email;
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       //user signed in
@@ -28,7 +28,6 @@ function check(){
 
 function login(){
  	var userEmail = document.getElementById("email").value;
-    email = userEmail;
     var userPass = document.getElementById("password").value;
     var f1 = 0;
     
@@ -44,10 +43,9 @@ function login(){
         
         database.child("users").orderByChild("email").equalTo(userEmail).once("value",snapshot => {
   		if (snapshot.exists()){
-      		window.alert("Thanks for coming back!")
-    	}else{
-         	database.child("users").push().child("email").set(userEmail);	   
-        }
+      		window.alert("This user is already logged in")
+            window.location.reload();
+    	}
 });
     }
 }

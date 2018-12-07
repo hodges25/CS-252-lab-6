@@ -1,5 +1,5 @@
 var flag = 0;
-var database = firebase.database();
+var database = firebase.database().ref();
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -15,13 +15,6 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
- function writeUserData(userEmail) {
- 		 firebase.database().ref('users/' + userId).set({
-  			  username: userEmail
-  	  });
-	  }
-      
-
 
 function check(){
  	if(flag == 0){
@@ -36,15 +29,19 @@ function check(){
 function login(){
  	var userEmail = document.getElementById("email").value;
     var userPass = document.getElementById("password").value;
+    var f1 = 0;
     
     firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
   // Handle Errors here.
+        f1 = 1;
   var errorCode = error.code;
   var errorMessage = error.message;
   window.alert("Error : "+ errorMessage);
   // ...
-});
-	writeUserData(userEmail);    
+});    
+   
+        database.child("users").set(userEmail);
+    
 }
 
 
