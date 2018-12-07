@@ -1,0 +1,87 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans serif;
+    height: 100%;
+}
+
+.lo {
+    color: white;
+    position: absolute;
+    border: 0;
+    background: #32408f;
+    right: 0;
+    top: 0;
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.lo:hover {
+    border: 1px solid white;
+}
+
+.login {
+    color: white;
+    z-index: 10;
+    background: #3F51B5;
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    padding: 20px;
+    top: 75%;
+    margin-top: -140px;
+    animation-duration: 2s;
+}
+
+.login input {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    outline: none;
+    padding: 15px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.login input:focus {
+    border: 1px solid grey;
+}
+
+.login button {
+    margin-left: 2%;
+    float: left;
+    background: #32408f;
+    color: white;
+    border: 0px;
+    padding: 15px;
+    border-radius: 5px;
+    display: block;
+    width: 40%;
+}
+
+.login button:hover {
+    border: 2px solid #606fc7;
+}
+
+.content {
+    max-width: 65%;
+    max-height: 100%;
+    margin: 75px auto;
+    border-radius: 6px;
+    background-color: none;
+}
+
+.form {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    padding-top: 10px;
+}
